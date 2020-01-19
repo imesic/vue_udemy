@@ -1,0 +1,54 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Vue vježba 4</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="exercise">
+      <!-- 1) Start the Effect with the Button. The Effect should alternate the "highlight"
+         or "shrink" class on each new setInterval tick (attach respective class to the div 
+         with id "effect" below) -->
+        <div>
+            <button @click="startEffect">Start Effect</button>
+            <div id="effect" :class="dodajKlasu"></div>
+        </div>
+        <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
+        <div v-bind:class="['green', 'font']">I got no class :(</div>
+        <!-- 3) Let the user enter a class (create some example classes) and attach it -->
+        <div>
+            <input type="text" v-model="emptyClass">
+            <div v-bind:class="emptyClass"></div>
+        </div>
+        <!-- 4) Let the user enter a class and enter true/ false for another class 
+            (create some example classes) and attach the classes -->
+        <div>
+            <input type="text" v-model="userClass">
+            <input type="text" v-model="isVisible">
+            <div v-bind:class="[{adjustDiv: isVisible}, userClass]"></div>
+        </div>
+        <!-- 5) Repeat 3) but now with values for styles (instead of class names). 
+            Attach the respective styles.  -->
+        <div>
+            <input type="text" v-model="myStyle.backgroundColor">
+            <div v-bind:style="myStyle"></div>
+        </div>
+        <!-- 6) Create a simple progress bar with setInterval and style bindings. 
+            Start it by hitting the below button. -->
+        <div>
+            <button v-bind:class="['button']" v-on:click="increaseProgress">Start Progress</button>
+            <p>{{ progress.width }}</p>
+            <div class="progress-bar-outer">
+                <div v-bind:style="progress"></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

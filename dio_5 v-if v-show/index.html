@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dio_5</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="show = !show">Stisni</button>
+        <!-- v-if je bolji za perfomanse -->
+        <p v-if="show">Vidiš me!</p>
+        <p v-else>Sada me vidiš</p>
+        <!-- v-show daje display:none -->
+        <p v-show="show" >Vidiš li me?</p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
